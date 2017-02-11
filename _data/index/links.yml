@@ -4,13 +4,13 @@
 #   desc: CEO
 #   website: https://www.google.com
 #   email: ceo@google.com
-#
-# - last_name: Donate
-#   first_name: Jalpc
-#   desc: Support Jalpc
-#   website: http://www.jack003.com/donate/
-#   email: me@jack003.com
-#
+
+- last_name: Simple Layout
+  first_name:
+  desc: Links back to the spartan version of my site
+  website: https://mcaceresb.github.io/
+  email: mauricio.caceres.bravo@gmail.com
+
 # - last_name: LN
 #   first_name: FN
 #   desc: COO
