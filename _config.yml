@@ -1,54 +1,52 @@
-# Welcome to Jekyll!
+# Config file for Jalpc theme
 
 # Website settings
-title: Jalpc
-description: Jack's blog,use Jekyll and github pages.
-keywords: Jack,Jalpc,blog,Jekyll,github,gh-pages
-baseurl:  /Jalpc # if you have suburl as homepage like '/homepage', please change it to '/homepage'
-url: http://jarrekk.github.io/Jalpc  # url should be changed to 'http://www.jack003.com/homepage' as before
-# url: http://127.0.0.1:4000
-img_path: /Jalpc/static/assets/img/blog  # url should be changed to '/homepage/static/assets/img/blog' as before
+title:       Mauricio Cáceres
+description: Mauricio Cáceres's personal site.
+keywords:    Mauricio Caceres,Mauricio Caceres Bravo,blog,Jalpc,github,gh-pages
+baseurl:     /beta                            # If you have suburl as homepage, like '/homepage', change to '/homepage'
+url:         http://mcaceresb.github.io/beta  # url should be changed to custom name if applicable
+img_path:    /beta/static/assets/img/blog     # url should be changed to '/homepage/static/assets/img/blog' as before
 
-# author -- index page "about me" section
+# Author -- index page "about me" section
 author:  # change following line to your infomation.
-  name: GitHub  # Be used at blog posts' author.
-  first_name: Hub  # Be used at index page about me section.
-  last_name: Git  # Be used at index page about me section.
-  cv: http://cv.jack003.com  # A online CV can be printed as PDF, leave blank if you don't have now
-  email: me@jack003.com  # Leave blank if you don't have now
-  facebook_username: jiakunnj  # Leave blank if you don't have now
-  github_username: jarrekk  # Leave blank if you don't have now
-  avatar: /static/assets/img/landing/avatar.jpg  # upload your avatar at directory and edit it.
+  name:              Mauricio Cáceres # Be used at blog posts' author.
+  first_name:        Mauricio         # Be used at index page about me section.
+  last_name:         Cáceres          # Be used at index page about me section.
+  cv:                https://mcaceresb.github.io/assets/cv.pdf # Link to CV; leave blank if you don't have
+  email:             mauricio.caceres.bravo@gmail.com      # Leave blank if you don't have now
+  medium_username:   mcaceresb                             # Leave blank if you don't have now
+  github_username:   mcaceresb                             # Leave blank if you don't have now
+  avatar:            /static/assets/img/landing/avatar.jpg # Upload your avatar and edit it.
   skill_icon1:
-    - name: icon-apache
-    - name: fa-linux
+    - name:          icon-apache
+    - name:          fa-linux
   skill_icon2:
-    - name: fa-linux
-    - name: icon-apache
-  desc: Introduce myself will be here.
+    - name:          fa-linux
+    - name:          icon-apache
+  desc:              Hi! I am a research assistant based in Cambridge, MA. This is my personal website, meant to force myself to speed along some coding projects I've had in the back-burner throughout the past year.
 
-# comment
-disqus:  # if you wanna comment feature, go to https://disqus.com/ to get your configuration; if not, comment following two lines.
-  name: jalpc
-  public_key: tj2MPaNlHMONwTH5bGDNSXyaBpW7q282MeUzh5CwcjJerNhK8Kxk3aWo7IckzTX7
+# Comment
+disqus:  # Go to https://disqus.com/ to configure comments; ow comment out
+  # name: jalpc
+  # public_key: tj2MPaNlHMONwTH5bGDNSXyaBpW7q282MeUzh5CwcjJerNhK8Kxk3aWo7IckzTX7
 
-# analytics
+# Analytics
 ## google analytics
-ga:  # if you wanna this feature, go to https://www.google.com/analytics/ to get your configuration; if not, comment following line.
+ga:  # Go to https://www.google.com/analytics/ to configure; ow comment out
   # id:
 
-## growingIO
-gio:  # if you wanna this feature, go to https://www.growingio.com/ to get your configuration; if not, comment following line.
+## GrowingIO
+gio:  # Go to https://www.growingio.com/ to configure; ow comment out
   # id:
 
-## donation
-donation: on  # type 'on'/'off' to choice display donation button at post page or not
-
+## Donation
+donation: off  # 'on'/'off' to display donation button at post page
 
 # Build settings
 encoding: utf-8
 
-# other settings
+# Other settings
 highlighter: rouge
 markdown: kramdown
 kramdown:

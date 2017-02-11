@@ -7655,6 +7655,10 @@ body.landing-page {
     margin-top: 60px
 }
 
+.landing-page .research-member {
+    text-align: left
+}
+
 .landing-page .team-member {
     text-align: center
 }

@@ -1,29 +1,85 @@
 # careers section data
 # if you don't have language feature(language.yml is empty), ignore "i18n" items
 - name:
-    detail: Company A
-    i18n: company_a
+    detail: National Bureau of Economic Research
+    i18n: nber_ra
   desc:
-    detail: I worked at Company A ...
-    i18n: company_a_desc
+    detail: I am currently working at NBER as an RA.
+    i18n: nber_ra_desc
   date:
-    detail: Apr. 2016
-    i18n: company_a_date
+    detail: June 2015
+    i18n: nber_ra_date
   job:
-    detail: CTO
-    i18n: company_a_job
-  icon: fa-plus-square
+    detail: Research Assistant
+    i18n: nber_ra_job
+  icon: fa-line-chart
 
 - name:
-    detail: Company B
-    i18n: company_b
+    detail: MA in Economics
+    i18n: columbia_ma
   desc:
-    detail: I worked at Company B ...
-    i18n: company_b_desc
+    detail: Graduated from Columbia University with a Master's in Economics.
+    i18n: columbia_ma_desc
   date:
-    detail: Jun. 2015
-    i18n: company_b_date
+    detail: May 2015
+    i18n: columbia_ma_date
   job:
-    detail: Full Stack Developer
-    i18n: company_b_job
-  icon: fa-plus-square
+    detail: Graduate Student
+    i18n: columbia_ma_job
+  icon: fa-graduation-cap
+
+- name:
+    detail: Columbia University
+    i18n: columbia_ta
+  desc:
+    detail: TA for intermediate macroeconomics at Columbia University.
+    i18n: columbia_ta_desc
+  date:
+    detail: Sep 2014
+    i18n: columbia_ta_date
+  job:
+    detail: Teaching Assistant
+    i18n: columbia_ta_job
+  icon: fa-book
+
+- name:
+    detail: Zions Bancorporation
+    i18n: zions
+  desc:
+    detail: Statistical modeling and analysis of retail lending credit risk.
+    i18n: zions_desc
+  date:
+    detail: Sep 2012
+    i18n: zions_date
+  job:
+    detail: Credit Risk Analyst.
+    i18n: zions_job
+  icon: fa-bank
+
+- name:
+    detail: BS in Economics, BS in Mathematics
+    i18n: uofu
+  desc:
+    detail: Graduated with honors (student commencement speaker, magna cum laude, undergraduate research scholar) from the University of Utah majoring in Economics and in Mathematics (Statistics Emphasis).
+    i18n: uofu_desc
+  date:
+    detail: Aug 2012
+    i18n: uofu_date
+  job:
+    detail: Student.
+    i18n: uofu_job
+  icon: fa-graduation-cap
+
+- name:
+    detail: University of Utah
+    i18n: uofu_ra
+  desc:
+    detail: Research assistant at the University of Utah.
+    i18n: uofu_ra_desc
+  date:
+    detail: Aug 2011
+    i18n: uofu_ra_date
+  job:
+    detail: Research Assistant
+    i18n: uofu_ra_job
+  icon: fa-line-chart

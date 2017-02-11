@@ -2,5 +2,23 @@
 
 label: Ability
 id : cs
-aspects: GitHub, Motivation, HTML5, ReactJS, Machine Learing, Python, Sleeping
-percentage: 100, 35, 65, 80, 70, 90, 50
+# aspects: Stata, R, LaTeX, SAS, Julia, MATLAB, Python
+# percentage: 95, 80, 70, 80, 60, 50, 75
+aspects: R, Stata, LaTeX, Julia, MATLAB, VBA, Linux/Shell, SQL, SAS, Python
+percentage: 85, 90, 85, 80, 70, 70, 65, 65, 85, 75
+
+# Stata,  95
+# R,      85
+# LaTeX,  85
+# Julia,  70
+# MATLAB, 50
+# VBA,    65
+# Linux,  65
+# SQL,    65
+# SAS,    85
+# Python, 75
+
+# Git,    50
+# SVN,    50
+# Bash,   65
+# Office, 65
