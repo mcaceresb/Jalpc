@@ -1,8 +1,8 @@
 # Config file for Jalpc theme
 
 # Website settings
-title:       Mauricio Cáceres
-description: Mauricio Cáceres's personal site.
+title:       Mauricio Cáceres Bravo
+description: Mauricio Cáceres Bravo's personal site.
 keywords:    Mauricio Caceres,Mauricio Caceres Bravo,blog,Jalpc,github,gh-pages
 baseurl:     /beta                            # If you have suburl as homepage, like '/homepage', change to '/homepage'
 url:         http://mcaceresb.github.io/beta  # url should be changed to custom name if applicable
@@ -10,9 +10,9 @@ img_path:    /beta/static/assets/img/blog     # url should be changed to '/homep
 
 # Author -- index page "about me" section
 author:  # change following line to your infomation.
-  name:              Mauricio Cáceres # Be used at blog posts' author.
-  first_name:        Mauricio         # Be used at index page about me section.
-  last_name:         Cáceres          # Be used at index page about me section.
+  name:              Mauricio Cáceres Bravo # Be used at blog posts' author.
+  first_name:        Mauricio               # Be used at index page about me section.
+  last_name:         Cáceres Bravo          # Be used at index page about me section.
   cv:                https://mcaceresb.github.io/assets/cv.pdf # Link to CV; leave blank if you don't have
   email:             mauricio.caceres.bravo@gmail.com      # Leave blank if you don't have now
   medium_username:   mcaceresb                             # Leave blank if you don't have now

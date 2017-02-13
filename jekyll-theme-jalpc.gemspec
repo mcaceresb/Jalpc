@@ -3,7 +3,7 @@
 Gem::Specification.new do |spec|
   spec.name          = "jekyll-theme-jalpc"
   spec.version       = "0.1.0"
-  spec.authors       = ["Mauricio Caceres"]
+  spec.authors       = ["Mauricio Caceres Bravo"]
   spec.email         = ["mauricio.caceres.bravo@gmail.com"]
 
   spec.summary       = "Write a short summary, because Rubygems requires one."
