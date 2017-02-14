@@ -34,7 +34,7 @@ disqus:  # Go to https://disqus.com/ to configure comments; ow comment out
 # Analytics
 ## google analytics
 ga:  # Go to https://www.google.com/analytics/ to configure; ow comment out
-  # id:
+  id: UA-91854317-1
 
 ## GrowingIO
 gio:  # Go to https://www.growingio.com/ to configure; ow comment out
@@ -48,7 +48,9 @@ encoding: utf-8
 
 # Other settings
 highlighter: rouge
+# highlighter: pygments
 markdown: kramdown
 kramdown:
   input: GFM
+  # syntax_highlighter: pygments
   syntax_highlighter: rouge
