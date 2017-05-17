@@ -19,7 +19,7 @@
   i18n: stata_gtools
   gh_user: mcaceresb
   repo: stata-gtools
-  img: /static/assets/img/landing/gtools-icon.svg
+  img: /static/assets/img/landing/gtools-iconv2.svg
   desc: Faster implementation of Stata's collapse and egen using C plugins.
 
 # - name: Gmail Download
