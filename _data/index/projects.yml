@@ -22,9 +22,9 @@
   img: /static/assets/img/landing/gtools-icon.svg
   desc: Faster implementation of Stata's collapse and egen using C plugins.
 
-- name: Gmail Download
-  i18n: gmail_download
-  gh_user: mcaceresb
-  repo: gmail-download
-  img: /static/assets/img/landing/email-download.svg
-  desc: Download all gmail-email for specified date and sort into folders.
+# - name: Gmail Download
+#   i18n: gmail_download
+#   gh_user: mcaceresb
+#   repo: gmail-download
+#   img: /static/assets/img/landing/email-download.svg
+#   desc: Download all gmail-email for specified date and sort into folders.
