@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Writing my first Stata plugin: A real wold use case"
+title:  "Writing my first Stata plugin: A real world use case"
 date:   2017-02-14 08:13:24 -0500
 desc: "Example documenting how and why I wrote my first Stata plugin."
 keywords: "stata,plugin,plugins,c,gh-pages,website,blog"
