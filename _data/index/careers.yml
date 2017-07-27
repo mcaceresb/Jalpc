@@ -1,13 +1,27 @@
 # careers section data
 # if you don't have language feature(language.yml is empty), ignore "i18n" items
 - name:
+    detail: Yale School of Management
+    i18n: yalesom_ra
+  desc:
+    detail: I am currently working at the Yale SOM as an RA.
+    i18n: yalesom_ra_desc
+  date:
+    detail: July 2017
+    i18n: yalesom_ra_date
+  job:
+    detail: Research Assistant
+    i18n: yalesom_ra_job
+  icon: fa-book
+
+- name:
     detail: National Bureau of Economic Research
     i18n: nber_ra
   desc:
-    detail: I am currently working at NBER as an RA.
+    detail: Worked on various RCTs and on projects using the US Medicare data.
     i18n: nber_ra_desc
   date:
-    detail: June 2015
+    detail: Jun 2015
     i18n: nber_ra_date
   job:
     detail: Research Assistant

@@ -4,19 +4,20 @@ label: Ability
 id : cs
 # aspects: Stata, R, LaTeX, SAS, Julia, MATLAB, Python
 # percentage: 95, 80, 70, 80, 60, 50, 75
-aspects: R, Stata, LaTeX, Julia, MATLAB, VBA, Linux/Shell, SQL, SAS, Python
-percentage: 85, 90, 85, 80, 70, 70, 65, 65, 85, 75
+aspects: R, Stata, LaTeX, Julia, MATLAB, C, Linux/Shell, SQL, SAS, Python
+percentage: 85, 90, 85, 80, 75, 70, 70, 70, 85, 80
 
 # Stata,  95
 # R,      85
 # LaTeX,  85
-# Julia,  70
-# MATLAB, 50
+# Julia,  75
+# MATLAB, 70
 # VBA,    65
-# Linux,  65
-# SQL,    65
+# C,      70
+# Linux,  70
+# SQL,    70
 # SAS,    85
-# Python, 75
+# Python, 80
 
 # Git,    50
 # SVN,    50
