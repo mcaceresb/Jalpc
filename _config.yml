@@ -1,54 +1,29 @@
-# Config file for Jalpc theme
+title: Mauricio Cáceres Bravo
+description: My personal website
+author: Mauricio Cáceres Bravo
+logo: /jekyll-hcz-blog/static/img/avatar.png
+github: https://github.com/mcaceresb
+about: Research Assistant at Yale SOM
 
-# Website settings
-title:       Mauricio Cáceres Bravo
-description: Mauricio Cáceres Bravo's personal site.
-keywords:    Mauricio Caceres,Mauricio Caceres Bravo,blog,Jalpc,github,gh-pages
-baseurl:     /beta                            # If you have suburl as homepage, like '/homepage', change to '/homepage'
-url:         http://mcaceresb.github.io/beta  # url should be changed to custom name if applicable
-img_path:    /beta/static/assets/img/blog     # url should be changed to '/homepage/static/assets/img/blog' as before
+baseurl: ""
+url: ""
 
-# Author -- index page "about me" section
-author:  # change following line to your infomation.
-  name:              Mauricio Cáceres Bravo # Be used at blog posts' author.
-  first_name:        Mauricio               # Be used at index page about me section.
-  last_name:         Cáceres Bravo          # Be used at index page about me section.
-  cv:                https://mcaceresb.github.io/assets/cv.pdf # Link to CV; leave blank if you don't have
-  email:             mauricio.caceres.bravo@gmail.com      # Leave blank if you don't have now
-  medium_username:   mcaceresb                             # Leave blank if you don't have now
-  github_username:   mcaceresb                             # Leave blank if you don't have now
-  avatar:            /static/assets/img/landing/avatar.jpg # Upload your avatar and edit it.
-  skill_icon1:
-    - name:          icon-python
-    - name:          fa-line-chart
-  skill_icon2:
-    - name:          fa-linux
-    - name:          fa-code
-  desc:              Hi! I am a research assistant based in New Haven, CT. This is my personal website, meant to force myself to speed along some coding projects I've had in the back-burner throughout the past year.
+allowsearch: true
 
-# Comment
-disqus:  # Go to https://disqus.com/ to configure comments; ow comment out
-  # name: jalpc
-  # public_key: tj2MPaNlHMONwTH5bGDNSXyaBpW7q282MeUzh5CwcjJerNhK8Kxk3aWo7IckzTX7
+medium_username: mcaceresb
+# google_tags: GTM-5JHMCV7
+google_analytics: UA-91854317-1
 
-# Analytics
-## google analytics
-ga:  # Go to https://www.google.com/analytics/ to configure; ow comment out
-  # id:
+share:
+  twitter_username: \#
+  fb_appid: 000000000000
 
-## GrowingIO
-gio:  # Go to https://www.growingio.com/ to configure; ow comment out
-  # id:
 
-## Donation
-donation: off  # 'on'/'off' to display donation button at post page
+enableTags: true
+tagarray: []
 
-# Build settings
-encoding: utf-8
-
-# Other settings
-highlighter: rouge
+paginate: 20
+per_page: 20
+paginate_path: "blog/page:num/"
 markdown: kramdown
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
+gems: [jekyll-paginate, jekyll-gist]

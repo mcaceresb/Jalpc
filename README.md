@@ -1,16 +1,22 @@
-# mcaceresb.github.io/beta
+## HCZ Material theme
 
-Beta version of my site, based on jarrekk's [Jalpc theme](https://jarrekk.github.io/Jalpc).
+This is a simple personal material theme, best suited for personal authors, programmars, bloggers. 
 
-## Howto
+### Demo
+* [https://codeasashu.github.io/hcz-jekyll-blog](https://codeasashu.github.io/hcz-jekyll-blog/)
 
-- `_config.yml`: Edit each section with the requisite information/settings.
-- `_data/landing.yml`: Custom sections of index page.
-- `_data/index/`: Each page here is a section.
-- `_data/blog.yml`: Edit navbar(categories); then each page in blog/ is a blog category. (e.g. `blog/category.html` and add `/category/` to the items title and permalink; make sure the title is `Caterogy`).
-- `CNAME`: To release site at custom domain, edit this file and create gh-pages branch. To use with basic github.io domain leave blank.
+#### Feature
 
-## License
+* Sitemap and XML Feed
+* Site Search 
+* Projects and tags
+* Paginations in homepage
+* Posts under category
+* Related Posts
+* Highlight pre
+* Next & Previous Post
+* Disqus comment
 
-The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+#### Screenshot
 
+![Screenshot Home Page](https://raw.githubusercontent.com/ashutosh2k12/jekyllthemes/master/thumbnails/hcz-material.png  "Screenshot Home Page")

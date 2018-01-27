@@ -1,13 +1,10 @@
 ---
 layout: post
 title:  "Writing my first Stata plugin: A real world use case"
-date:   2017-02-14 08:13:24 -0500
-desc: "Example documenting how and why I wrote my first Stata plugin."
-keywords: "stata,plugin,plugins,c,gh-pages,website,blog"
-categories: [Stata]
-tags: [Stata,Plugins,Simci]
-icon: icon-html
+date:   2017-02-14 20:13:24 -0500
+categories: stata plugins
 ---
+
 
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
@@ -29,8 +26,6 @@ computationally intensive, it pales.
 of the rougher corners of Stata rather bearable. However, optimizing
 Stata for a speedy run is really difficult. Enter [Stata plugins](www.stata.com/plugins/).
 
-<br>
-
 What are Stata plugins?
 -----------------------
 
@@ -51,7 +46,7 @@ A simple hello world program would be as follows:
     - Version 3: [stplugin.c](http://www.stata.com/plugins/stplugin.c), [stplugin.h](http://www.stata.com/plugins/stplugin.h)
 - Create hello.c (Note you should have stplugin.h and stplugin.c in the same directory).
 
-```c
+{% highlight C %}
 #include "stplugin.h"
 
 STDLL stata_call(int argc, char *argv[])
@@ -59,22 +54,19 @@ STDLL stata_call(int argc, char *argv[])
     SF_display ("Hello World\n");
     return (0);
 }
-```
+{% endhighlight %}
 
 - Now from the command line, run
-```bash
+{% highlight bash %}
 gcc -shared -fPIC -DSYSTEM=OPUNIX stplugin.c hello.c -o hello.plugin # Linux
 gcc -bundle -DSYSTEM=APPLEMAC stplugin.c hello.c -o hello.plugin     # Mac
-```
+{% endhighlight %}
 
 - Last, from Stata navigate to your working directory and run
-<!-- ```stata -->
-```
+{% highlight stata %}
 program hello, plugin using("./hello.plugin")
 plugin call hello
-```
-
-<br>
+{% endhighlight %}
 
 Is it worth the hassle?
 -----------------------
@@ -88,12 +80,11 @@ Perhaps most people realize this, but my understanding of for loops in
 Stata is that they are run as if you printed each block within the for
 loop however many times you tell it to execute. Thus
 
-<!-- ```stata -->
-```
+{% highlight stata %}
 forvalues i = 1 / 1000 {
     // Stuff to do
 }
-```
+{% endhighlight %}
 
 may look like three lines of code, but it's really equivalent to 1000.
 The reason I started using Stata plugins was to speed up a simulation.
@@ -103,8 +94,6 @@ place inside a loop that does a simulation.
 
 Below I document a real-world use case where C was 50 times faster than
 Stata, so for me the work was definitely worthwhile.
-
-<br>
 
 A real world use case
 ---------------------
@@ -137,14 +126,11 @@ This does not tell us anything about power by itself, but the confidence
 interval can be used as the basis of an iterative procedure to simulate
 power. Hence coding the simulation efficiently is crucial.
 
-<br>
-
 Why write a plugin?
 -------------------
 
 The problem above is actually very simple to implement. In pseudo-code:
-<!-- ```stata -->
-```
+{% highlight stata %}
 function simci (X, y, P, reps)
 {
     n = rows(X)
@@ -159,10 +145,8 @@ function simci (X, y, P, reps)
 
     return (b)
 }
-```
+{% endhighlight %}
 
-Though simple, doing this _**efficiently**_ is impossible in
-Stata. There are three prominent issues:
 Though simple, doing this _**efficiently**_ is impossible in
 Stata. There are three prominent issues:
 1. There is no way to shuffle a vector in Stata. That's not a thing.
@@ -184,8 +168,7 @@ Stata. There are three prominent issues:
    difficult to code.
 
 The solution in Stata would look like this
-<!-- ```stata -->
-```
+{% highlight stata %}
 program stataSimci, rclass sortpreserve
     syntax varlist [if] [in] , [ Ptreat(real 0.5) reps(int 100) ]
 
@@ -220,11 +203,9 @@ end
 sysuse auto, clear
 stataSimci price mpg foreign, p(0.5) reps(10)
 matrix list r(b)
-```
+{% endhighlight %}
 
 This is a hugely inefficient program!
-
-<br>
 
 Wait, can't Mata handle these things?
 -------------------------------------
@@ -248,8 +229,7 @@ In this case, Mata will run faster largely because it can
 
 The implementation is very straightforward:
 
-<!-- ```stata -->
-```
+{% highlight stata %}
 program mataSimci, rclass sortpreserve
     syntax varlist [if] [in] , [ Ptreat(real 0.5) reps(int 100) ]
     gettoken depvar controls: varlist
@@ -293,7 +273,7 @@ end
 sysuse auto, clear
 mataSimci price mpg foreign, p(0.5) reps(10)
 matrix list r(b)
-```
+{% endhighlight %}
 
 There are two problems:
 1. Matrix operations in Mata are not terribly fast (certainly not
@@ -304,8 +284,6 @@ There are two problems:
 2. There is no reason to run the loop sequentially! It is conceptually
    trivial to parallelize the loop. Granted, parallelism is not trivial
    but the fact it cannot be done, even in Stata/MP, is frustrating.
-
-<br>
 
 How does the solution in C look like?
 -------------------------------------
@@ -319,7 +297,7 @@ faster than Stata).
 Writing the wrapper for this is not too hard thanks to the GNU
 Scientific Library. Noting the 0-based indexing:
 
-```c
+{% highlight C %}
 #include <math.h>
 #include <omp.h>
 #include <stdio.h>
@@ -484,7 +462,7 @@ double sim_ols(const gsl_matrix * X, const gsl_vector * y)
 
     return (gsl_vector_get(x, 0));
 }
-```
+{% endhighlight %}
 
 Save the code to `pluginSimci.c`. To compile `pluginSimci.plgin`, on top
 of `gcc` and the SPI, you will need
@@ -492,35 +470,32 @@ of `gcc` and the SPI, you will need
 - [OpenMP](http://www.openmp.org)
 
 Again, you should have `stplugin.c` and `stplugin.h` in the same directory. Now on Linux/Unix, run
-```bash
+{% highlight bash %}
 CFLAGS="-Wall -fopenmp -shared -fPIC -DSYSTEM=OPUNIX"
 gcc $CFLAGS -c -o stplugin.o    stplugin.c
 gcc $CFLAGS -c -o pluginSimci.o pluginSimci.c
 gcc $CFLAGS stplugin.o pluginSimci.o \
     -lgsl -lgslcblas -lm -o pluginSimci.plugin
-```
+{% endhighlight %}
 
 Depending on your system, you may also need to add `-std=c99` as a flag and point to the location of the `libgsl*so` files. For instance, I regularly SSH into a RedHat server, and to compile I ran
-```bash
+{% highlight bash %}
 CFLAGS="-Wall -std=c99 -fopenmp -shared -fPIC -DSYSTEM=OPUNIX"
 gcc -I/usr/local/lib $CFLAGS -c -o stplugin.o    stplugin.c
 gcc -I/usr/local/lib $CFLAGS -c -o pluginSimci.o pluginSimci.c
 gcc -L/usr/local/lib $CFLAGS  stplugin.o pluginSimci.o \
     -lgsl -lgslcblas -lm -o pluginSimci.plugin
-```
+{% endhighlight %}
 
 To compile in other system, you should consult [Stata's documentation](http://www.stata.com/plugins). Once compiled, from Stata:
 
-<!-- ```stata -->
-```
+{% highlight stata %}
 matrix b = J(10, 1, .)
 sysuse auto
 program pluginSimci, plugin using(./pluginSimci.plugin)
 plugin call pluginSimci price mpg foreign, b 0.5 10
 matrix list b
-```
-
-<br>
+{% endhighlight %}
 
 Timing performance
 ------------------
@@ -529,8 +504,7 @@ I don't really know of good Stata tools to profile performance. However,
 it's not too hard to time how long a command takes to run. I wrote a
 simple wrapper for it, which we use with the programs above:
 
-<!-- ```stata -->
-```
+{% highlight stata %}
 . local github https://raw.githubusercontent.com
 . net install benchmark, from(`github'/mcaceresb/stata-benchmark/master/)
 . local benchmark benchmark, disp reps(5): qui
@@ -560,14 +534,15 @@ Average over 5 runs: 11.7166 seconds
  2.426 seconds
 Average over 5 runs: 2.5424 seconds
 
-. `benchmark' plugin call pluginSimci price mpg foreign, 0.5 800
+. matrix b = J(800, 1, .)
+. `benchmark' plugin call pluginSimci price mpg foreign, b 0.5 800
 1: .283 seconds
 2: .273 seconds
 3: .262 seconds
 4: .238 seconds
 5: .288 seconds
 Average over 5 runs: 0.2688 seconds
-```
+{% endhighlight %}
 
 In the example Mata ran 5x vs Stata and the plugin ran 10x vs Mata. For
 a 50x speed improvement, I'd say the hassle was worth it! My real-world
